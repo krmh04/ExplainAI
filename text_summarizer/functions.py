@@ -7,8 +7,8 @@ def summarize(prompt):
         st.session_state["summary"] = openai.Completion.create(
             model="text-davinci-003",
             prompt=augmented_prompt,
-            temperature=.5,
-            max_tokens=1000,
+            temperature=0.25,
+            max_tokens=600,
         )["choices"][0]["text"]
     except:
         st.write('There was an error =(')
