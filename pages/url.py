@@ -6,7 +6,7 @@ import scraper as scr
 st.title("Summarize the text from any URL")
 
 try:
-    openai.api_key = os.getenv('OPENAI_KEY')
+    openai.api_key = os.getenv('OPENAI_API_KEY')
 
     if "summary" not in st.session_state:
         st.session_state["summary"] = ""

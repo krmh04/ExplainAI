@@ -11,7 +11,7 @@ st.button(
         kwargs={"prompt": input_text},
     )
 try:
-    openai.api_key = os.getenv('OPENAI_KEY')
+    openai.api_key = os.getenv('OPENAI_API_KEY')
   
     if "summary" not in st.session_state:
         st.session_state["summary"] = ""
