@@ -318,7 +318,7 @@ SQLAlchemy @ file:///C:/ci/sqlalchemy_1647600017103/work
 stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
 statsbombpy==1.4.3
 statsmodels==0.13.2
-streamlit==1.10.0
+streamlit==1.17.0
 sympy @ file:///C:/ci/sympy_1647853873858/work
 tables==3.6.1
 tabulate==0.8.9

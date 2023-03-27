@@ -2,13 +2,15 @@ import openai
 import streamlit as st
 
 def summarize(prompt):
-    augmented_prompt = f"summarize this text: {prompt}"
+   # augmented_prompt = f"summarize this text: {prompt}"
     try:
-        st.session_state["summary"] = openai.Completion.create(
-            model="text-davinci-003",
-            prompt=augmented_prompt,
-            temperature=0.25,
-            max_tokens=600,
-        )["choices"][0]["text"]
+        response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+        {"role": "system", "content": "You are a helpful research assistant."},
+        {"role": "user", "content": f"Summarize this: {prompt}"},
+        ],
+        )
+        st.session_state["summary"] = response["choices"][0]["message"]["content"]
     except:
         st.write('There was an error =(')
