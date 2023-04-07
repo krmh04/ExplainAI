@@ -7,7 +7,7 @@ from langchain.llms import OpenAI
 from langchain.vectorstores.faiss import FAISS
 from pypdf import PdfReader
 import streamlit as st
-@st.cache
+@st.cache_data
 def parse_pdf(file):
     pdf = PdfReader(file)
     output = []
@@ -16,7 +16,7 @@ def parse_pdf(file):
         output.append(text)
 
     return "\n\n".join(output)
-@st.cache
+@st.cache_data
 def embed_text(text):
     """Split the text and embed it in a FAISS vector store"""
     text_splitter = RecursiveCharacterTextSplitter(

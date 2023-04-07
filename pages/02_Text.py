@@ -4,7 +4,7 @@ import os
 from text_summarizer.functions import summarize
 st.session_state.update(st.session_state)
 def main():
-    st.title("Summarize your text in an instant")
+    st.title("Summarize your text in an instant!")
     input_text = st.text_area(label="Enter the text:", value="", height=250)
     st.button(
             "Submit",
@@ -18,7 +18,7 @@ def main():
             st.session_state["summary"] = ""
         
         if input_text:
-            output_text = st.text_area(label="Summarized text:", value=st.session_state["summary"], height=250)
+            st.write(st.session_state["summary"])
         
         
     except:

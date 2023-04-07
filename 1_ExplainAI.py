@@ -3,9 +3,16 @@ from modules.login import Login
 import trycourier
 from streamlit_login_auth_ui.mydeta import deta_db
 
-st.title('Welcome to ExplainAI')
+st.title('Welcome to ExplainAI!')
 def main():
-    st.title("Summarize or ask questions")
+    st.markdown(""" 
+    <style>
+    .big-font {
+    font-size:25px !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    st.markdown('<p class="big-font">Summarize your content or ask questions for your PDF here.</p>',unsafe_allow_html=True)
     db=None
     users_auth_file = '_secret_auth_.json'
     deta_project_key=st.secrets['Deta_Project_Key']

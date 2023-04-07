@@ -3,7 +3,7 @@ from utils import parse_pdf, embed_text, get_answer
 st.session_state.update(st.session_state)
 
 def main():
-    st.header("Doc QA")
+    st.header("Ask anything about your PDF")
     uploaded_file = st.file_uploader("Upload a pdf", type=["pdf"])
 
     if uploaded_file is not None:
