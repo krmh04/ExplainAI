@@ -8,7 +8,8 @@ pypdf==3.8.1
 PyPDF2==3.0.1
 Requests==2.28.2
 streamlit==1.20.0
-streamlit_login_auth_ui==0.1.0
 trycourier==4.4.0
 yt_dlp==2023.3.4
 argon2-cffi==21.3.0
+git+https://github.com/fsmosca/streamlit_login_auth_ui.git@username-is-not-case-sensitive
+deta
