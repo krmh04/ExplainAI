@@ -11,3 +11,4 @@ streamlit==1.20.0
 streamlit_login_auth_ui==0.1.0
 trycourier==4.4.0
 yt_dlp==2023.3.4
+argon2-cffi==21.3.0
