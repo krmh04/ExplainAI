@@ -18,7 +18,7 @@ def main():
         # load the PDF file using requests and display it in the app
         pdf_data = uploaded_file.read()
         b64 = base64.b64encode(pdf_data).decode("utf-8")
-        pdf_display = f'<iframe src="data:application/pdf;base64,{b64}" width="700" height="1000" type="application/pdf" sandbox="allow-scripts allow-same-origin">'
+        pdf_display = f'<iframe src="data:application/pdf;base64,{b64}" width="700" height="1000" type="application/pdf">'
         st.markdown(pdf_display, unsafe_allow_html=True)
         input_text = st.text_area(label="Enter the text:", value="", height=250)
         st.button(
