@@ -21,19 +21,14 @@ def main():
         pdf_display = f'<iframe src="data:application/pdf;base64,{b64}" width="700" height="1000" type="application/pdf">'
         st.markdown(pdf_display, unsafe_allow_html=True)
         input_text = st.text_area(label="Enter the text:", value="", height=250)
-        st.button(
-                    "Submit",
-                    on_click=summarize,
-                    kwargs={"prompt": input_text},
-                )
         try:
                 openai.api_key = os.getenv('OPENAI_API_KEY')
             
                 if "summary" not in st.session_state:
                     st.session_state["summary"] = ""
                 
-                if input_text:
-                    output_text = st.text_area(label="Summarized text:", value=st.session_state["summary"], height=250)
+                if  st.button("Submit", on_click=summarize, kwargs={"prompt": input_text}):
+                    st.write(st.session_state["summary"])
                 
                 
         except:

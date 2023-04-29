@@ -1,6 +1,5 @@
 import streamlit as st
 from utils import parse_pdf, embed_text, get_answer
-st.session_state.update(st.session_state)
 
 def main():
     st.header("Ask anything about your PDF")

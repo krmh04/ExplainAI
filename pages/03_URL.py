@@ -21,12 +21,9 @@ def main():
             st.session_state["summary"] = ""
 
         input_url = st.text_input("Enter the URL:")
-        st.button(
-        "Submit",
-        on_click=summarize,
-        kwargs={"prompt":  input_url},
-    )
-        if input_url:
+
+        if st.button("Submit", on_click=summarize, kwargs={"prompt": input_url}):
+
             scraper = scr.Scraper()
             response = scraper.request_url(input_url) 
             input_url = (

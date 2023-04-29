@@ -18,7 +18,8 @@ def main():
             for page_num in range(len(pdf_reader.pages)):
                 page_text = pdf_reader.pages[page_num].extract_text().lower()
             if st.button("Submit", on_click=summarize, kwargs={"prompt": page_text}):
-                page_text = st.text_area(label="Summarized text:", value=st.session_state["summary"], height=250)
+                page_text =st.write(st.session_state["summary"])
+
             
     except Exception as e:
         st.write('There was an error =(')
