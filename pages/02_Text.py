@@ -6,18 +6,13 @@ st.session_state.update(st.session_state)
 def main():
     st.title("Summarize your text in an instant!")
     input_text = st.text_area(label="Enter the text:", value="", height=250)
-    st.button(
-            "Submit",
-            on_click=summarize,
-            kwargs={"prompt": input_text},
-        )
     try:
         openai.api_key = os.getenv('OPENAI_API_KEY')
     
         if "summary" not in st.session_state:
             st.session_state["summary"] = ""
         
-        if input_text:
+        if st.button("Submit", on_click=summarize, kwargs={"prompt": input_text}):
             st.write(st.session_state["summary"])
         
         
